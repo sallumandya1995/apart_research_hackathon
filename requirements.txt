@@ -1,3 +1,4 @@
 gradio
 openai 
 matplotlib
+gradio[mcp]
