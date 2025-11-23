@@ -1,0 +1,6 @@
+timestamp,session_id,event_type,model_used,result,duration_ms,user_agent
+2024-10-15 14:30:22,sess_abc123,image_scan,google/gemini-2.5-flash-lite,UNSAFE,2450,Chrome/120 (Windows)
+2024-10-15 14:32:10,sess_abc123,text_test,meta-llama/llama-guard-4-12b,Blocked: Refused to respond,1800,Chrome/120 (Windows)
+2024-10-15 14:35:45,sess_def456,image_scan,openai/chatgpt-4o-latest,SAFE,3200,Firefox/115 (Mac)
+2024-10-15 14:38:12,sess_ghi789,text_test,openai/gpt-oss-safeguard-20b,UNSAFE: Partial leak detected,2100,Safari/17 (iOS)
+2024-10-15 14:40:05,sess_abc123,image_scan,mistralai/mistral-medium-3,UNSAFE,1900,Chrome/120 (Windows)
