@@ -18,7 +18,7 @@ client = OpenAI(
 )
 
 
- 
+
 vision_models = [
     "google/gemini-2.5-flash-lite",
     "google/gemini-2.0-flash-lite-001",
@@ -277,7 +277,7 @@ with gr.Blocks(theme=theme, css=light_blue_glass_css) as demo:
                 return evt.selected
             gallery.select(update_image, inputs=[], outputs=img)
 
- 
+
         with gr.TabItem(" Text Prompt Tester"):
             gr.Markdown(
                 """
@@ -295,22 +295,21 @@ with gr.Blocks(theme=theme, css=light_blue_glass_css) as demo:
                     lines=4,
                 )
             output = gr.Textbox(label="Model Responses", lines=10)
-            
-            # ✅ NEW: Button row for better UX
+ 
             with gr.Row():
                 btn2 = gr.Button("Run Test", variant="primary")
-                clear_btn = gr.Button("🔄 Clear results")   
-            
+                clear_btn = gr.Button("🔄 Clear results")
+
             gr.Examples(
                 examples=prompt_injection_templates,
                 inputs=prompt,
                 label="Example Prompt Injections"
             )
-            
-            # Existing click + NEW clear click
+
+ 
             btn2.click(test_injection, inputs=[prompt, mdl_text], outputs=output)
-            clear_btn.click(lambda: "", outputs=output)  # ← ADD HERE (clears output textbox)
-            
+            clear_btn.click(lambda: "", outputs=output)  
+
         with gr.TabItem("📊 Analytics Dashboard"):
             gr.Markdown("# 🔍 Phoenikz Prompt Injection Analyzer - Analytics")
 
@@ -346,4 +345,4 @@ with gr.Blocks(theme=theme, css=light_blue_glass_css) as demo:
           )
             gr.Markdown(markdown_content)
 
-demo.launch(share=True, debug=True)
+demo.launch(share=True, debug=True,mcp_server=True)
